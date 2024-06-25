@@ -13,8 +13,7 @@ export default function AboutUs() {
         <h3 className="text-2xl font-bold mb-4">Our Team</h3>
         <div className="flex flex-wrap justify-center space-x-4">
           {/* Add team member photos and bios here */}
-          {/*
-          <div className="flex flex-col items-center">
+                    {/* <div className="flex flex-col items-center">
             <Image src="/images/team-member-1.jpg" alt="Team Member 1" width={150} height={150} className="rounded-full shadow-lg" />
             <p className="text-lg font-semibold mt-2">John Doe</p>
             <p className="text-gray-600">Founder & CEO</p>

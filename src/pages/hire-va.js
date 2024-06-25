@@ -1,7 +1,8 @@
-// src/pages/hire-va.js
 import Step from '../components/Step';
 import CurriculumItem from '../components/CurriculumItem';
 import Layout from '@/components/Layout';
+import FAQ from '../components/FAQ';
+import Head from 'next/head';
 
 export default function HireVA() {
   const steps = [
@@ -41,60 +42,78 @@ export default function HireVA() {
           subtitle: "The Fundamentals",
           text: [
             "Dive deep into the core duties and critical skills that define a top-tier virtual assistant. Master the art of appointment setting and become the backbone of your client’s capital-raising efforts."
-          ]
+          ],
         },
-        {
-          subtitle: "The Value You’ll Bring",
-          text: [
-            "Discover how your role as an appointment setter can significantly impact your client's business. Learn to articulate your value and become a key player in driving success."
-          ]
-        },
-        {
-          subtitle: "Targets You Need to Monitor to Deliver",
-          text: [
-            "Identify and understand the crucial metrics that will guide your performance. Learn to set and achieve targets that ensure you consistently deliver outstanding results."
-          ]
-        },
-      ]
+      ],
+    },
+  ];
+
+  const faqs = [
+    {
+      question: "What is the process to hire a VA?",
+      answer: "The process involves an initial consultation, needs assessment, VA matching, onboarding and training, and ongoing support."
     },
     {
-      day: "2.0",
-      title: "Social Media for Investor Outreach (Day 1)",
-      content: [
-        {
-          subtitle: "Discover the Game-Changers",
-          text: [
-            "Unveil the top social media platforms that yield the highest conversion rates for appointment setting and best practices for each platform to maximize your outreach."
-          ]
-        },
-        {
-          subtitle: "The Pieces Required from Your Client",
-          text: [
-            "Effectively have a stream of solid conversation starters, and therefore booked calls with compelling bios, optimized profiles for search, and consistent content posts scheduled."
-          ]
-        },
-      ]
+      question: "How long does it take to match with a VA?",
+      answer: "The matching process typically takes 3-5 business days, depending on the specific requirements and availability."
     },
-    // Add more curriculum items as needed
+    {
+      question: "What qualifications do your VAs have?",
+      answer: "Our VAs are pre-vetted and have gone through comprehensive training to ensure they meet our high standards."
+    },
+    {
+      question: "Is there any trial period for the services?",
+      answer: "Yes, we offer a trial period to ensure the VA meets your expectations and fits well with your business needs."
+    },
+    {
+      question: "What if I am not satisfied with the VA?",
+      answer: "If you are not satisfied with the VA, we will work with you to find a better match or address any concerns you have."
+    },
   ];
 
   return (
     <Layout>
-      <div className="min-h-screen bg-gray-50 p-4">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-gray-900 mb-6 text-center">Hire a VA</h1>
-          <p className="text-lg text-gray-700 mb-6 text-center">
-            Here is the step-by-step guide on how to hire a virtual assistant through our platform.
-          </p>
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Steps to Hire a VA</h2>
-          {steps.map(step => (
-            <Step key={step.number} {...step} />
-          ))}
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Comprehensive Training Program</h2>
-          {curriculum.map(item => (
-            <CurriculumItem key={item.day} {...item} />
-          ))}
-        </div>
+      <div className="container mx-auto px-4 py-12 bg-white shadow-md rounded-lg m-8">
+        <h1 className="text-4xl font-bold mb-8 text-blue-800">Hire a Virtual Assistant</h1>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold mb-6 text-blue-600">Steps to Hire a VA</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {steps.map((step, index) => (
+              <div key={index} className="step bg-blue-50 p-6 rounded-lg shadow-md">
+                <div className="text-2xl font-bold text-blue-700">{step.number}</div>
+                <h3 className="text-xl font-semibold text-blue-800 mt-2">{step.title}</h3>
+                <p className="text-gray-700 mt-2">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold mb-6 text-blue-600">Curriculum</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {curriculum.map((item, index) => (
+              <div key={index} className="curriculum-item bg-gray-50 p-6 rounded-lg shadow-md">
+                <h3 className="text-2xl font-bold text-blue-800">{item.title}</h3>
+                {item.content.map((content, idx) => (
+                  <div key={idx} className="mt-4">
+                    <h4 className="text-xl font-semibold text-blue-700">{content.subtitle}</h4>
+                    <p className="text-gray-700">{content.text}</p>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold mb-6 text-blue-600">FAQs</h2>
+          <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+            {faqs.map((faq, index) => (
+              <FAQ key={index} question={faq.question} answer={faq.answer} />
+            ))}
+          </div>
+        </section>
       </div>
     </Layout>
   );

@@ -1,88 +1,9 @@
-// // src/pages/index.js
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faUserTie, faHandsHelping, faHeadset, faPenNib, faLaptopCode, faQuoteLeft } from '@fortawesome/free-solid-svg-icons';
-// import Link from 'next/link';
-// import HeroSection from '../components/HeroSection';
-// import Introduction from '../components/Introduction';
-// import AboutUs from '../components/AboutUs';
-// import Services from '../components/Services';
-// import ComprehensiveTraining from '../components/ComprehensiveTraining';
-
-// export default function Home() {
-//   return (
-//     <div className="min-h-screen bg-gray-50">
-//       <HeroSection />
-
-//       <Introduction />
-
-//       <AboutUs />
-
-//       <Services />
-
-//       <ComprehensiveTraining />
-
-//       {/* Hire a VA Section */}
-//       <section className="py-16 px-4 text-center bg-white">
-//         <h2 className="text-3xl font-bold mb-6 text-gray-800">Hire a VA</h2>
-//         <p className="text-lg text-gray-700 mb-6 max-w-prose mx-auto">
-//           Here is the step-by-step guide on how to hire a virtual assistant through our platform.
-//         </p>
-//         <div className="max-w-4xl mx-auto text-left">
-//           <ul className="list-decimal list-inside space-y-4">
-//             <li className="text-lg text-gray-700">Initial Consultation</li>
-//             <li className="text-lg text-gray-700">Needs Assessment</li>
-//             <li className="text-lg text-gray-700">VA Matching</li>
-//             <li className="text-lg text-gray-700">Onboarding and Training</li>
-//             <li className="text-lg text-gray-700">Ongoing Support</li>
-//           </ul>
-//         </div>
-//       </section>
-
-//       {/* Become a VA Section */}
-//       <section className="py-16 px-4 bg-gray-50 text-center">
-//         <h2 className="text-3xl font-bold mb-6 text-gray-800">Become a VA</h2>
-//         <p className="text-lg text-gray-700 mb-6 max-w-prose mx-auto">
-//           Learn about our application process and training programs to become a successful virtual assistant.
-//         </p>
-//         <div className="max-w-4xl mx-auto text-left">
-//           <ul className="list-decimal list-inside space-y-4">
-//             <li className="text-lg text-gray-700">Application Process</li>
-//             <li className="text-lg text-gray-700">Training Programs</li>
-//             <li className="text-lg text-gray-700">VA Portal</li>
-//             <li className="text-lg text-gray-700">Testimonials</li>
-//           </ul>
-//         </div>
-//       </section>
-
-//       {/* Testimonials Section */}
-//       <section className="py-16 px-4 bg-white text-center">
-//         <h2 className="text-3xl font-bold mb-6 text-gray-800">Testimonials</h2>
-//         <div className="max-w-4xl mx-auto">
-//           <div className="flex flex-wrap justify-center space-x-4">
-//             <div className="flex flex-col items-center max-w-sm p-4 bg-gray-100 rounded-lg shadow-lg mb-4">
-//               <FontAwesomeIcon icon={faQuoteLeft} className="text-4xl text-gray-400 mb-4" />
-//               <p className="text-lg text-gray-700">"This service has been a game-changer for our business. The VAs are top-notch and very professional."</p>
-//               <p className="text-lg font-semibold mt-4 text-gray-800">- Happy Client</p>
-//             </div>
-//             <div className="flex flex-col items-center max-w-sm p-4 bg-gray-100 rounded-lg shadow-lg mb-4">
-//               <FontAwesomeIcon icon={faQuoteLeft} className="text-4xl text-gray-400 mb-4" />
-//               <p className="text-lg text-gray-700">"I've learned so much through their training programs. I feel well-prepared and confident in my role."</p>
-//               <p className="text-lg font-semibold mt-4 text-gray-800">- Successful VA</p>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
-
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import Hero from '../components/Hero';
 import ServiceCard from '../components/ServiceCard';
 import TestimonialCard from '../components/TestimonialCard';
-import '../styles/globals.css'; // Import Tailwind CSS
+//import '../styles/globals.css'; // Import Tailwind CSS
 
 export default function Home() {
   const services = [

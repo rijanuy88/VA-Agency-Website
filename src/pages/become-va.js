@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
-import { faQuoteLeft } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import FAQ from '../components/VA-FAQ';
+import TestimonialCard from '../components/Become-VA/TestimonialCard'; // Import the TestimonialCard component
+import Section from '../components/Become-VA/Section'; // Import the Section component
 
 export default function BecomeVA() {
   const faqs = [
@@ -27,6 +27,23 @@ export default function BecomeVA() {
     },
   ];
 
+  const testimonials = [
+    {
+      quote: "I've learned so much through their training programs. I feel well-prepared and confident in my role.",
+      author: "Successful VA"
+    },
+    {
+      quote: "I've learned so much through their training programs. I feel well-prepared and confident in my role.",
+      author: "Successful VA"
+    },
+    {
+      quote: "I've learned so much through their training programs. I feel well-prepared and confident in my role.",
+      author: "Successful VA"
+    },
+    
+    // Add more testimonials here if needed
+  ];
+
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50 p-4">
@@ -36,60 +53,41 @@ export default function BecomeVA() {
             Learn about our application process and training programs to become a successful virtual assistant.
           </p>
 
-          <h2 className="text-3xl font-bold text-blue-600 mb-4">Application Process</h2>
-          <div className="mb-6 bg-white p-6 rounded-lg shadow-md">
-            <p className="text-lg text-gray-700">
-              Our application process is straightforward and designed to identify top talent. Here are the steps:
-            </p>
+          <Section title="Application Process" description="Our application process is straightforward and designed to identify top talent. Here are the steps:">
             <ul className="list-decimal list-inside space-y-4 mt-4 text-lg text-gray-700">
               <li>Submit your application form with your details and experience.</li>
               <li>Attend an initial interview to assess your skills and fit for the role.</li>
               <li>Complete a skills assessment to demonstrate your proficiency.</li>
               <li>Join our training program if selected.</li>
             </ul>
-          </div>
+          </Section>
 
-          <h2 className="text-3xl font-bold text-blue-600 mb-4">Training Programs</h2>
-          <div className="mb-6 bg-white p-6 rounded-lg shadow-md">
-            <p className="text-lg text-gray-700">
-              Our training programs are designed to equip you with the skills needed to excel as a virtual assistant. The training includes:
-            </p>
+          <Section title="Training Programs" description="Our training programs are designed to equip you with the skills needed to excel as a virtual assistant. The training includes:">
             <ul className="list-decimal list-inside space-y-4 mt-4 text-lg text-gray-700">
               <li>Comprehensive training on direct messaging best practices.</li>
               <li>Mastering social media inbox management and data privacy.</li>
               <li>Scheduling appointments and managing client communications.</li>
               <li>Improving productivity and time management.</li>
             </ul>
-          </div>
+          </Section>
 
-          <h2 className="text-3xl font-bold text-blue-600 mb-4">VA Portal</h2>
-          <div className="mb-6 bg-white p-6 rounded-lg shadow-md">
-            <p className="text-lg text-gray-700">
-              As a VA, you will have access to our secure portal where you can manage your profile, apply for jobs, and access training materials.
-            </p>
-          </div>
+          <Section title="VA Portal" description="As a VA, you will have access to our secure portal where you can manage your profile, apply for jobs, and access training materials." />
 
-          <h2 className="text-3xl font-bold text-blue-600 mb-4">Testimonials</h2>
-          <div className="mb-6 bg-white p-6 rounded-lg shadow-md">
-            <p className="text-lg text-gray-700">
-              Hear from some of our successful VAs about their experience with our program:
-            </p>
+          <Section title="Testimonials" description="Hear from some of our successful VAs about their experience with our program:">
             <div className="flex flex-wrap justify-center space-x-4">
-              <div className="flex flex-col items-center max-w-sm p-4 bg-gray-100 rounded-lg shadow-lg mb-4">
-                <FontAwesomeIcon icon={faQuoteLeft} className="text-4xl text-gray-400 mb-4" />
-                <p className="text-lg text-gray-700 text-center">"I've learned so much through their training programs. I feel well-prepared and confident in my role."</p>
-                <p className="text-lg font-semibold mt-4 text-gray-800">- Successful VA</p>
-              </div>
-              {/* Add more testimonials here if needed */}
+              {testimonials.map((testimonial, index) => (
+                <TestimonialCard key={index} quote={testimonial.quote} author={testimonial.author} />
+              ))}
             </div>
-          </div>
+          </Section>
 
-          <h2 className="text-3xl font-bold text-blue-600 mb-4">FAQs</h2>
-          <div className="mb-6 bg-blue-50 p-6 rounded-lg shadow-md">
-            {faqs.map((faq, index) => (
-              <FAQ key={index} question={faq.question} answer={faq.answer} />
-            ))}
-          </div>
+          <Section title="FAQs">
+            <div className="bg-blue-50 p-6 rounded-lg shadow-md">
+              {faqs.map((faq, index) => (
+                <FAQ key={index} question={faq.question} answer={faq.answer} />
+              ))}
+            </div>
+          </Section>
         </div>
       </div>
     </Layout>
